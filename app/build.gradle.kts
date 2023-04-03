@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.dicoding.submissionbeginnerandroid"
+    namespace = "com.dicoding.githubapp"
     compileSdk = 32
 
     defaultConfig {
-        applicationId = "com.dicoding.submissionbeginnerandroid"
+        applicationId = "com.dicoding.githubapp"
         minSdk = 21
         targetSdk = 32
         versionCode = 1
@@ -26,8 +26,8 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -62,19 +62,23 @@ dependencies {
 
     // glide
     implementation("com.github.bumptech.glide:glide:4.12.0")
+
+    //Logging
+    implementation("com.jakewharton.timber:timber:5.0.1")
+    implementation("com.orhanobut:logger:2.2.0")
 }
 
-tasks.register("copyAPKDebug",Copy::class){
+tasks.register("copyAPKDebug", Copy::class) {
     dependsOn("test")
     val soureDir = layout.buildDirectory.dir("outputs/apk/debug/app-debug.apk")
     val destDir = "$rootDir/apk"
     from(soureDir)
     into(destDir)
-    rename("app-debug.apk","BeginnerAndroidDebug.apk")
+    rename("app-debug.apk", "FundamentalAndroidDebug.apk")
 
     // Untuk cek apakah aplikasi ada virus atau tidak, bisa diliath dari MD5 yang sudah d generate
-    doLast{
-        val filePath = File(destDir,"BeginnerAndroidDebug.apk")
+    doLast {
+        val filePath = File(destDir, "FundamentalAndroidDebug.apk")
         ant.withGroovyBuilder {
             "checksum"("file" to filePath.path)
         }
@@ -82,7 +86,7 @@ tasks.register("copyAPKDebug",Copy::class){
 }
 
 tasks.whenTaskAdded {
-    if(this.name == "assembleDebug"){
+    if (this.name == "assembleDebug") {
         this.finalizedBy("copyAPKDebug")
     }
 }

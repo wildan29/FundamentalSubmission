@@ -1,7 +1,13 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-parcelize")
+}
+
+val properties = Properties().apply {
+    load(rootProject.file("local.properties").reader())
 }
 
 android {
@@ -29,6 +35,22 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField(
+                "String",
+                "TOKEN_API_GITHUB",
+                "${properties["API_KEY_GITHUB"]}"
+            )
+            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
+        }
+
+        getByName("debug") {
+            isMinifyEnabled = false
+            buildConfigField(
+                "String",
+                "TOKEN_API_GITHUB",
+                "${properties["API_KEY_GITHUB"]}"
+            )
+            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
         }
     }
     compileOptions {
@@ -66,6 +88,13 @@ dependencies {
     //Logging
     implementation("com.jakewharton.timber:timber:5.0.1")
     implementation("com.orhanobut:logger:2.2.0")
+
+    // retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // okhttp3
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 }
 
 tasks.register("copyAPKDebug", Copy::class) {

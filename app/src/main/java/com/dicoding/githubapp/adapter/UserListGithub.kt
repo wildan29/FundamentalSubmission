@@ -1,5 +1,6 @@
 package com.dicoding.githubapp.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,8 +8,13 @@ import com.bumptech.glide.Glide
 import com.dicoding.githubapp.databinding.UserListGithubBinding
 import com.dicoding.githubapp.model.GithubUserModel
 
+@SuppressLint("NotifyDataSetChanged")
 class UserListGithub(private val listUserGithub: ArrayList<GithubUserModel>) :
     RecyclerView.Adapter<UserListGithub.ViewHolder>() {
+
+    init {
+        notifyDataSetChanged()
+    }
 
     interface OnItemClickCallback {
         fun onItemClicked(data: GithubUserModel)

@@ -2,7 +2,6 @@ package com.dicoding.githubapp.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.dicoding.githubapp.api.ApiConfig
 import com.dicoding.githubapp.model.GithubResponeApi
 import com.dicoding.githubapp.model.GithubResponeApiItem
@@ -16,7 +15,7 @@ import timber.log.Timber
 class GithubUserRepository {
 
     companion object {
-        const val EXAMPLE = "wildan"
+        var EXAMPLE = "wildan"
     }
 
     val toastMsg = MutableLiveData<String>()
@@ -28,7 +27,6 @@ class GithubUserRepository {
     fun getAllUsers(): LiveData<List<GithubResponeApiItem>> {
         val getUsers = MutableLiveData<List<GithubResponeApiItem>>()
         _isLoading.value = true
-
         ApiConfig.getApiService().getAllUser().enqueue(object : Callback<GithubResponeApi> {
             override fun onResponse(
                 call: Call<GithubResponeApi>,
@@ -52,6 +50,7 @@ class GithubUserRepository {
     }
 
     fun getGithubUsers(): LiveData<List<ItemsItem>> {
+
         val getUsers = MutableLiveData<List<ItemsItem>>()
         _isLoading.value = true
         ApiConfig.getApiService().getUser(EXAMPLE).enqueue(object : Callback<GithubResponse> {
@@ -63,6 +62,7 @@ class GithubUserRepository {
                 if (response.isSuccessful) {
                     getUsers.value = response.body()?.items
                 } else {
+                    toastMsg.value = "Gagal memuat, periksa koneksi anda!"
                     Timber.e("onFailure: ${response.message()}")
                 }
             }

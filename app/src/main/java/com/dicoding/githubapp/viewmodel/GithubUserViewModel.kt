@@ -8,21 +8,22 @@ import com.dicoding.githubapp.repository.GithubUserRepository
 
 class GithubUserViewModel : ViewModel() {
 
-    val nilai = GithubUserRepository()
+    private val repository = GithubUserRepository()
 
     fun getAllUsersViewModel(): LiveData<List<GithubResponeApiItem>> {
-        return nilai.getAllUsers()
+        return repository.getAllUsers()
     }
 
     fun getToastMsg(): LiveData<String> {
-        return nilai.toastMsg
+        return repository.toastMsg
     }
 
     fun loading(): LiveData<Boolean> {
-        return nilai.isLoading
+        return repository.isLoading
     }
 
     fun getGithubUser(): LiveData<List<ItemsItem>> {
-        return nilai.getGithubUsers()
+        return repository.getGithubUsers()
     }
+
 }

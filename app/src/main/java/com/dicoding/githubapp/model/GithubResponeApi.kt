@@ -64,7 +64,6 @@ data class GithubResponeApiItem(
 )
 
 data class GithubResponse(
-
     @field:SerializedName("total_count")
     val totalCount: Int,
 
@@ -73,7 +72,6 @@ data class GithubResponse(
 
     @field:SerializedName("items")
     val items: List<ItemsItem>
-
 )
 
 data class ItemsItem(

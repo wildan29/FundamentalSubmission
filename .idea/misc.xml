@@ -4,17 +4,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable-night/divider.xml" value="0.168" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable-night/ic_baseline_open_in_browser_24.xml" value="0.187" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable-night/ic_baseline_search_24.xml" value="0.168" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/divider.xml" value="0.168" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/ic_baseline_open_in_browser_24.xml" value="0.187" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.168" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/activity_not_found.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/user_list_github.xml" value="0.27447916666666666" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/activity_detail_user.xml" value="0.264" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/activity_not_found.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/activity_not_found_user.xml" value="0.27447916666666666" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/biodata_user.xml" value="0.2734375" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/biodata_user_place_holder.xml" value="0.264" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/fragment_followers.xml" value="0.10574712643678161" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/fragment_following.xml" value="0.2604166666666667" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/list_ff.xml" value="0.264" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/profile_user_detail.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/user_list_github.xml" value="0.264" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/menu/menu.xml" value="0.2734375" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/menu/open.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

@@ -6,6 +6,7 @@ import com.dicoding.githubapp.BuildConfig
 object Utils {
     const val API_KEY_GITHUB = BuildConfig.TOKEN_API_GITHUB
     const val BASE_URL = BuildConfig.BASE_URL
+    const val LOGIN_KEY_USER_FF = "following and followers"
 
     fun showLoading(view: View, isLoading: Boolean) =
         if (isLoading) view.visibility = View.VISIBLE

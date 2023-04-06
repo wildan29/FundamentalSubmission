@@ -1,6 +1,8 @@
 package com.dicoding.githubapp.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class GithubResponeApi(
     @field:SerializedName("GithubResponeApi")
@@ -75,7 +77,6 @@ data class GithubResponse(
 )
 
 data class ItemsItem(
-
     @field:SerializedName("gists_url")
     val gistsUrl: String,
 
@@ -136,3 +137,5 @@ data class ItemsItem(
     @field:SerializedName("name")
     val name: String
 )
+
+

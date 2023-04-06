@@ -3,6 +3,7 @@ package com.dicoding.githubapp.ui.activity
 import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var getUserViewModel: GithubUserViewModel
     private lateinit var searchUserViewModel: SearchUserGithubViewModel
     private var default = GithubUserRepository.EXAMPLE
+
 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,6 +97,17 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = UserListGithub(list_user)
         binding.rvUserGithub.adapter = adapter
+
+        adapter.setOnItemClickCallback(object : UserListGithub.OnItemClickCallback {
+            override fun onItemClicked(data: GithubUserModel) {
+                startActivity(
+                    Intent(this@MainActivity, DetailUserActivity::class.java).putExtra(
+                        DetailUserActivity.LOGIN_KEY_USER,
+                        data.login
+                    )
+                )
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -105,6 +118,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.search) {
             val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
             val searchView = item.actionView as SearchView
 
             searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))

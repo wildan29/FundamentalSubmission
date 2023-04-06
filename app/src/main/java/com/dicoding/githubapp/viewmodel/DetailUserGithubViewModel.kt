@@ -21,4 +21,10 @@ class DetailUserGithubViewModel : ViewModel() {
         return repository.getDetailUser(login)
     }
 
+
+    fun getHtml(login: String): LiveData<DetailUser> {
+        return repository.getDetailUserHtml(login)
+    }
+
+
 }

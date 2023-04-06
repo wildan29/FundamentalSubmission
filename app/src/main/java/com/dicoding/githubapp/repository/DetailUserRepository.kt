@@ -20,8 +20,34 @@ class DetailUserRepository {
     val isLoading: LiveData<Boolean> = _isLoading
 
     fun getDetailUser(login: String): LiveData<DetailUser> {
+
         val getDetailUser = MutableLiveData<DetailUser>()
         _isLoading.value = true
+
+        ApiConfig.getApiService().getUserDetail(login).enqueue(object : Callback<DetailUser> {
+            override fun onResponse(call: Call<DetailUser>, response: Response<DetailUser>) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    getDetailUser.value = response.body()
+                } else {
+                    toastMsg.value = "Gagal memuat, periksa koneksi anda!"
+                    Timber.e("onFailure: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<DetailUser>, t: Throwable) {
+                _isLoading.value = false
+                toastMsg.value = "Gagal memuat, periksa koneksi anda!"
+            }
+        })
+
+        return getDetailUser
+    }
+
+    fun getDetailUserHtml(login: String): LiveData<DetailUser> {
+
+        val getDetailUser = MutableLiveData<DetailUser>()
+        _isLoading.value = false
 
         ApiConfig.getApiService().getUserDetail(login).enqueue(object : Callback<DetailUser> {
             override fun onResponse(call: Call<DetailUser>, response: Response<DetailUser>) {

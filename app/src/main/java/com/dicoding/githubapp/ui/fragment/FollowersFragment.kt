@@ -53,7 +53,13 @@ class FollowersFragment : Fragment() {
 
         // get Followers
         followersViewModel.getFollowers(login).observe(viewLifecycleOwner) {
-            setDataToFragment(it!!)
+            if(it.isEmpty()){
+                binding.data.visibility = View.VISIBLE
+            }else{
+                binding.data.visibility = View.INVISIBLE
+                setDataToFragment(it!!)
+            }
+
         }
 
         // get loading

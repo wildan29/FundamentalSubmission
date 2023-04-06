@@ -16,5 +16,6 @@ data class DetailUser(
     val followers: String?,
     @field:SerializedName("following")
     val following: String?,
-
+    @field:SerializedName("html_url")
+    val html: String?
 ) : Parcelable

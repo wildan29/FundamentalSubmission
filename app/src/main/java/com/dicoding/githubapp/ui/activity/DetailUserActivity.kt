@@ -2,7 +2,8 @@ package com.dicoding.githubapp.ui.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.Intent.ACTION_SEND
+import android.content.Intent.ACTION_VIEW
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -15,9 +16,7 @@ import com.dicoding.githubapp.R
 import com.dicoding.githubapp.adapter.SectionPageAdapter
 import com.dicoding.githubapp.databinding.ActivityDetailUserBinding
 import com.dicoding.githubapp.databinding.BiodataUserPlaceHolderBinding
-import com.dicoding.githubapp.databinding.ListFfBinding
 import com.dicoding.githubapp.model.DetailUser
-import com.dicoding.githubapp.ui.fragment.FollowersFragment
 import com.dicoding.githubapp.util.Utils
 import com.dicoding.githubapp.viewmodel.DetailUserGithubViewModel
 import com.dicoding.githubapp.viewmodel.FollowersGithubViewModel
@@ -28,6 +27,7 @@ class DetailUserActivity : AppCompatActivity() {
     private lateinit var bindingDetail: BiodataUserPlaceHolderBinding
     private lateinit var detailUserViewModel: DetailUserGithubViewModel
     private lateinit var followersViewModel: FollowersGithubViewModel
+    private var value = ""
 
     companion object {
         const val LOGIN_KEY_USER = "login_key_user"
@@ -45,7 +45,7 @@ class DetailUserActivity : AppCompatActivity() {
         followersViewModel = ViewModelProvider(this)[FollowersGithubViewModel::class.java]
 
         // get intent
-        val value = intent.getStringExtra(LOGIN_KEY_USER)!!
+        value = intent.getStringExtra(LOGIN_KEY_USER)!!
 
         // make back button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -67,6 +67,10 @@ class DetailUserActivity : AppCompatActivity() {
         // get message
         detailUserViewModel.getToastMsg().observe(this) {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        }
+
+        binding.refresh.setOnRefreshListener {
+            refresh()
         }
 
         setTabLayoutView(value)
@@ -100,6 +104,8 @@ class DetailUserActivity : AppCompatActivity() {
         binding.viewPager.adapter = sectionPagerAdapter
 
         val tabTitle = resources.getStringArray(R.array.tab)
+
+
         TabLayoutMediator(binding.tabs, binding.viewPager) { tab, postion ->
             tab.text = tabTitle[postion]
         }.attach()
@@ -112,7 +118,9 @@ class DetailUserActivity : AppCompatActivity() {
             }
 
             R.id.open_browse -> {
-
+                detailUserViewModel.getHtml(value).observe(this) {
+                    startActivity(Intent(ACTION_VIEW, Uri.parse(it.html)))
+                }
             }
         }
         return super.onOptionsItemSelected(item)
@@ -121,5 +129,30 @@ class DetailUserActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.open, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    private fun refresh() {
+
+        binding.biodataProfile.root.visibility = View.INVISIBLE
+
+        // get detail user
+        detailUserViewModel.getGithubUser(value).observe(this) {
+            binding.biodataProfile.root.visibility = View.VISIBLE
+            setData(it)
+        }
+
+        // loading data
+        detailUserViewModel.loading().observe(this) {
+            Utils.showLoading(binding.progressBar, it)
+        }
+
+        // get message
+        detailUserViewModel.getToastMsg().observe(this) {
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        }
+
+        setTabLayoutView(value)
+
+        binding.refresh.isRefreshing = false
     }
 }

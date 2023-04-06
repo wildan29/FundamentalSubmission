@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_200">#F5F5F5</color>
     <color name="action_bar">#FF000000</color>
+    <color name="tab_layout">#BDBDBD</color>
 </resources>

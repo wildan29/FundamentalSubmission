@@ -42,7 +42,12 @@ class FollowingFragment : Fragment() {
         val login = arguments?.getString(Utils.LOGIN_KEY_USER_FF)!!
 
         followingViewModel.getFollowing(login).observe(viewLifecycleOwner) {
-            setDataToFragment(it)
+            if (it.isEmpty()) {
+                binding.data.visibility = View.VISIBLE
+            } else {
+                binding.data.visibility = View.INVISIBLE
+                setDataToFragment(it!!)
+            }
         }
 
         followingViewModel.loading().observe(viewLifecycleOwner) {

@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.MenuItemCompat
 import androidx.lifecycle.ViewModelProvider
@@ -43,7 +44,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // change color in night mode or no
-        supportActionBar?.setBackgroundDrawable(resources.getDrawable(R.color.action_bar))
+        supportActionBar?.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.color.action_bar
+            )
+        )
 
         // deklarasi viewmodel
         getUserViewModel = ViewModelProvider(this)[GithubUserViewModel::class.java]
@@ -53,7 +59,12 @@ class MainActivity : AppCompatActivity() {
         binding.rvUserGithub.layoutManager = layoutManager
 
         val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
-        itemDecoration.setDrawable(resources.getDrawable(R.drawable.divider))
+        itemDecoration.setDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.color.action_bar
+            )!!
+        )
         binding.rvUserGithub.addItemDecoration(itemDecoration)
 
         // get github users
@@ -84,6 +95,7 @@ class MainActivity : AppCompatActivity() {
         binding.refresh.setOnRefreshListener {
             refresh()
         }
+
 
     }
 
@@ -190,9 +202,8 @@ class MainActivity : AppCompatActivity() {
             })
 
             // ketika back button ditekan akan set kembali data ke awal
-            MenuItemCompat.setOnActionExpandListener(
-                item,
-                object : MenuItemCompat.OnActionExpandListener {
+            item.setOnActionExpandListener(
+                object : MenuItem.OnActionExpandListener {
                     override fun onMenuItemActionExpand(item: MenuItem): Boolean {
                         return true
                     }

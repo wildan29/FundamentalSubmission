@@ -43,7 +43,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/guideline2"
-                app:tabSelectedTextColor="@color/black"
+                app:tabSelectedTextColor="@color/white"
                 app:tabTextColor="@color/tab_layout"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:indeterminateTint="@color/black"
+                android:indeterminateTint="@color/white"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@id/guideline2"
                 app:layout_constraintEnd_toEndOf="parent"

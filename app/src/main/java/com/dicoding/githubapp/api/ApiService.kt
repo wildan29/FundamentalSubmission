@@ -2,6 +2,7 @@ package com.dicoding.githubapp.api
 
 import com.dicoding.githubapp.model.*
 import com.dicoding.githubapp.util.Utils
+import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -33,4 +34,5 @@ interface ApiService {
     fun getUserFollowing(
         @Path("login") login: String
     ): Call<List<FollowingGithubModelItem>>
+
 }

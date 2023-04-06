@@ -17,14 +17,14 @@
         android:theme="@style/Theme.GithubApp"
         tools:targetApi="31">
         <activity
-            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
             android:name=".ui.activity.DetailUserActivity"
+            android:configChanges="keyboardHidden|screenSize|screenLayout"
             android:exported="false" />
         <activity
-            android:theme="@style/Theme.App.Starting"
             android:name=".ui.activity.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

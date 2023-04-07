@@ -36,7 +36,7 @@ class FavoriteGithubUserAdapter(private val listFavorteGithubUser: ArrayList<Fav
     }
 
     override fun onBindViewHolder(holder: FavoriteGithubUserViewHolder, position: Int) {
-        val (_, login, html, avatar) = listFavorteGithubUser[position]
+        val (_, login, avatar) = listFavorteGithubUser[position]
 
         with(holder.binding) {
             Glide.with(holder.itemView.context).load(avatar).into(imageUser)

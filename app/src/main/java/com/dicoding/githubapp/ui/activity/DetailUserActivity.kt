@@ -193,7 +193,6 @@ class DetailUserActivity : AppCompatActivity() {
     fun saveToDb(value: DetailUser) {
         favoriteGithubUser?.let {
             it.id = value.id
-            it.htmlUrl = value.html
             it.login = value.login
             it.avatarUrl = value.avatarUrl
             detailUserViewModel.insert(it)

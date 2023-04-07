@@ -13,9 +13,6 @@ data class FavoriteGithubUser(
     @ColumnInfo(name = "login")
     var login: String?,
 
-    @ColumnInfo(name = "html_url")
-    var htmlUrl: String? = null,
-
     @ColumnInfo(name = "avatar_url")
     var avatarUrl: String? = null,
 )

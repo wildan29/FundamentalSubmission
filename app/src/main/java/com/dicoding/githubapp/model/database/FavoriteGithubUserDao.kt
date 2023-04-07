@@ -16,7 +16,4 @@ interface FavoriteGithubUserDao {
 
     @Query("SELECT * FROM FavoriteGithubUser ORDER BY login ASC")
     fun getAllUser(): LiveData<List<FavoriteGithubUser>>
-
-    @Query("SELECT * FROM FavoriteGithubUser WHERE FavoriteGithubUser.id = :id")
-    fun getUserById(id: Int): LiveData<FavoriteGithubUser>
 }

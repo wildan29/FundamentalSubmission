@@ -1,4 +1,4 @@
-package com.dicoding.githubapp.model
+package com.dicoding.githubapp.model.remote
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

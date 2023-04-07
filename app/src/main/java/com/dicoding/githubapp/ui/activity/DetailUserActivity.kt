@@ -16,7 +16,9 @@ import com.dicoding.githubapp.R
 import com.dicoding.githubapp.adapter.SectionPageAdapter
 import com.dicoding.githubapp.databinding.ActivityDetailUserBinding
 import com.dicoding.githubapp.databinding.BiodataUserPlaceHolderBinding
-import com.dicoding.githubapp.model.DetailUser
+import com.dicoding.githubapp.model.database.FavoriteGithubUser
+import com.dicoding.githubapp.model.remote.DetailUser
+import com.dicoding.githubapp.ui.factory.FavoriteGithubUserViewModelFactory
 import com.dicoding.githubapp.util.Utils
 import com.dicoding.githubapp.viewmodel.DetailUserGithubViewModel
 import com.dicoding.githubapp.viewmodel.FollowersGithubViewModel
@@ -28,6 +30,9 @@ class DetailUserActivity : AppCompatActivity() {
     private lateinit var detailUserViewModel: DetailUserGithubViewModel
     private lateinit var followersViewModel: FollowersGithubViewModel
     private var value = ""
+    private var favoriteGithubUser: FavoriteGithubUser? = null
+    private var cekFavorite = false
+    private var detailUser = DetailUser()
 
     companion object {
         const val LOGIN_KEY_USER = "login_key_user"
@@ -41,7 +46,10 @@ class DetailUserActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // set view model provider
-        detailUserViewModel = ViewModelProvider(this)[DetailUserGithubViewModel::class.java]
+        detailUserViewModel = ViewModelProvider(
+            this,
+            FavoriteGithubUserViewModelFactory.getInstance(this.application)
+        )[DetailUserGithubViewModel::class.java]
         followersViewModel = ViewModelProvider(this)[FollowersGithubViewModel::class.java]
 
         // get intent
@@ -57,6 +65,32 @@ class DetailUserActivity : AppCompatActivity() {
         detailUserViewModel.getGithubUser(value).observe(this) {
             binding.biodataProfile.root.visibility = View.VISIBLE
             setData(it)
+            detailUser = it
+            favoriteGithubUser = FavoriteGithubUser(it.id, it.login)
+            detailUserViewModel.getAllFavorites().observe(this) { favorite ->
+                if (favorite != null) {
+                    for (data in favorite) {
+                        if (detailUser.id == data.id) {
+                            cekFavorite = true
+                            binding.favorite?.setImageResource(R.drawable.ic_baseline_favorite_24)
+                        }
+                    }
+                }
+            }
+        }
+
+        // add to database
+        binding.favorite?.setOnClickListener {
+            if (!cekFavorite) {
+                cekFavorite = true
+                binding.favorite?.setImageResource(R.drawable.ic_baseline_favorite_24)
+                saveToDb(detailUser)
+            } else {
+                cekFavorite = false
+                binding.favorite?.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                detailUserViewModel.delete(detailUser.id)
+                Toast.makeText(this, "Remove From Favorite List", Toast.LENGTH_LONG).show()
+            }
         }
 
         // loading data
@@ -154,5 +188,16 @@ class DetailUserActivity : AppCompatActivity() {
         setTabLayoutView(value)
 
         binding.refresh.isRefreshing = false
+    }
+
+    fun saveToDb(value: DetailUser) {
+        favoriteGithubUser?.let {
+            it.id = value.id
+            it.htmlUrl = value.html
+            it.login = value.login
+            it.avatarUrl = value.avatarUrl
+            detailUserViewModel.insert(it)
+            Toast.makeText(this, "Add User To Favorite List", Toast.LENGTH_SHORT).show()
+        }
     }
 }

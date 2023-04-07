@@ -1,13 +1,11 @@
 package com.dicoding.githubapp.adapter
 
-import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.githubapp.databinding.UserListGithubBinding
-import com.dicoding.githubapp.model.FollowersGithubModelItem
+import com.dicoding.githubapp.model.remote.FollowersGithubModelItem
 
 class FollowerAdapter(private val listUserGithub: ArrayList<FollowersGithubModelItem>) :
     RecyclerView.Adapter<FollowerAdapter.ViewHolder>() {

@@ -2,8 +2,8 @@ package com.dicoding.githubapp.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.dicoding.githubapp.model.GithubResponeApiItem
-import com.dicoding.githubapp.model.ItemsItem
+import com.dicoding.githubapp.model.remote.GithubResponeApiItem
+import com.dicoding.githubapp.model.remote.ItemsItem
 import com.dicoding.githubapp.repository.GithubUserRepository
 
 class GithubUserViewModel : ViewModel() {

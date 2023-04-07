@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.githubapp.databinding.UserListGithubBinding
-import com.dicoding.githubapp.model.FollowingGithubModelItem
+import com.dicoding.githubapp.model.remote.FollowingGithubModelItem
 
 class FollowingAdapter(private val listUserGithub: ArrayList<FollowingGithubModelItem>) :
     RecyclerView.Adapter<FollowingAdapter.ViewHolder>() {

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.githubapp.adapter.FollowerAdapter
 import com.dicoding.githubapp.databinding.ActivityDetailUserBinding
 import com.dicoding.githubapp.databinding.FragmentFollowersBinding
-import com.dicoding.githubapp.model.FollowersGithubModelItem
+import com.dicoding.githubapp.model.remote.FollowersGithubModelItem
 import com.dicoding.githubapp.util.Utils
 import com.dicoding.githubapp.viewmodel.FollowersGithubViewModel
 

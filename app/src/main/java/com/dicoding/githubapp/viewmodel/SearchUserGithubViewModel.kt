@@ -3,7 +3,7 @@ package com.dicoding.githubapp.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.dicoding.githubapp.model.ItemsItem
+import com.dicoding.githubapp.model.remote.ItemsItem
 import com.dicoding.githubapp.repository.SearchUserGithubRepository
 import com.dicoding.githubapp.ui.preferences.ThemeSettingPreference
 

@@ -4,7 +4,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-parcelize")
-    kotlin("kapt")
+    id("kotlin-kapt")
 }
 
 val properties = Properties().apply {
@@ -109,8 +109,8 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("android.arch.persistence.room:runtime:1.1.1")
-    kapt("androidx.room:room-compiler:2.5.1")
+    implementation("androidx.room:room-runtime:2.3.0")
+    kapt("androidx.room:room-compiler:2.3.0")
 
 }
 

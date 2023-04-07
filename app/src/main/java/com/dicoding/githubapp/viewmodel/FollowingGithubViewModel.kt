@@ -2,7 +2,7 @@ package com.dicoding.githubapp.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.dicoding.githubapp.model.FollowingGithubModelItem
+import com.dicoding.githubapp.model.remote.FollowingGithubModelItem
 import com.dicoding.githubapp.repository.FollowingGithubRepository
 
 class FollowingGithubViewModel : ViewModel() {

@@ -20,10 +20,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.githubapp.R
-import com.dicoding.githubapp.adapter.UserListGithub
+import com.dicoding.githubapp.adapter.UserListGithubAdapter
 import com.dicoding.githubapp.databinding.ActivityMainBinding
-import com.dicoding.githubapp.model.GithubUserModel
-import com.dicoding.githubapp.model.ItemsItem
+import com.dicoding.githubapp.model.remote.GithubUserModel
+import com.dicoding.githubapp.model.remote.ItemsItem
 import com.dicoding.githubapp.repository.GithubUserRepository
 import com.dicoding.githubapp.ui.factory.SettingViewModelFactory
 import com.dicoding.githubapp.ui.preferences.ThemeSettingPreference
@@ -123,10 +123,10 @@ class MainActivity : AppCompatActivity() {
             list_user.add(GithubUserModel(i.login, i.avatarUrl))
         }
 
-        val adapter = UserListGithub(list_user)
+        val adapter = UserListGithubAdapter(list_user)
         binding.rvUserGithub.adapter = adapter
 
-        adapter.setOnItemClickCallback(object : UserListGithub.OnItemClickCallback {
+        adapter.setOnItemClickCallback(object : UserListGithubAdapter.OnItemClickCallback {
             override fun onItemClicked(data: GithubUserModel) {
                 startActivity(
                     Intent(this@MainActivity, DetailUserActivity::class.java).putExtra(
@@ -268,7 +268,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.favorites -> {
-
+                startActivity(Intent(this, FavoriteGithubUserActivity::class.java))
             }
         }
 

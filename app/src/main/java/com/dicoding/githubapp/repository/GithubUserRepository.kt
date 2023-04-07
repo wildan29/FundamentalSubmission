@@ -3,10 +3,10 @@ package com.dicoding.githubapp.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.dicoding.githubapp.api.ApiConfig
-import com.dicoding.githubapp.model.GithubResponeApi
-import com.dicoding.githubapp.model.GithubResponeApiItem
-import com.dicoding.githubapp.model.GithubResponse
-import com.dicoding.githubapp.model.ItemsItem
+import com.dicoding.githubapp.model.remote.GithubResponeApi
+import com.dicoding.githubapp.model.remote.GithubResponeApiItem
+import com.dicoding.githubapp.model.remote.GithubResponse
+import com.dicoding.githubapp.model.remote.ItemsItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.githubapp.adapter.FollowingAdapter
 import com.dicoding.githubapp.databinding.FragmentFollowingBinding
-import com.dicoding.githubapp.model.FollowingGithubModelItem
+import com.dicoding.githubapp.model.remote.FollowingGithubModelItem
 import com.dicoding.githubapp.util.Utils
 import com.dicoding.githubapp.viewmodel.FollowingGithubViewModel
 

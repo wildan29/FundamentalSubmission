@@ -5,8 +5,18 @@
         <item
             android:id="@+id/search"
             android:icon="@drawable/ic_baseline_search_24"
-            android:title="Search"
+            android:title="@string/search"
             app:actionViewClass="androidx.appcompat.widget.SearchView"
             app:showAsAction="collapseActionView|always" />
+
+        <item
+            android:id="@+id/favorites"
+            android:icon="@drawable/ic_baseline_favorite_24"
+            android:title="@string/favorite"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/theme"
+            android:title="@string/setting" />
     </group>
 </menu>

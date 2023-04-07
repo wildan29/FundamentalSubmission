@@ -2,10 +2,12 @@ package com.dicoding.githubapp.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.dicoding.githubapp.model.ItemsItem
 import com.dicoding.githubapp.repository.SearchUserGithubRepository
+import com.dicoding.githubapp.ui.preferences.ThemeSettingPreference
 
-class SearchUserGithubViewModel : ViewModel() {
+class SearchUserGithubViewModel(private val pref: ThemeSettingPreference) : ViewModel() {
     private val repository = SearchUserGithubRepository()
 
     fun getToastMsg(): LiveData<String> {
@@ -18,5 +20,9 @@ class SearchUserGithubViewModel : ViewModel() {
 
     fun getGithubUser(username: String): LiveData<List<ItemsItem>> {
         return repository.searchUsersGithub(username)
+    }
+
+    fun getThemeSetting(): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
     }
 }

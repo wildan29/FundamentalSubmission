@@ -4,16 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable-night/divider.xml" value="0.168" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable-night/ic_baseline_favorite_24.xml" value="0.1" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable-night/ic_baseline_open_in_browser_24.xml" value="0.187" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable-night/ic_baseline_search_24.xml" value="0.168" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable-night/ic_baseline_settings_24.xml" value="0.1" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/divider.xml" value="0.168" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/ic_baseline_open_in_browser_24.xml" value="0.187" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.168" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-land-night/activity_detail_user.xml" value="0.23236331569664903" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-land/activity_detail_user.xml" value="0.23236331569664903" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/activity_detail_user.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/activity_not_found.xml" value="0.27447916666666666" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/activity_theme_setting.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/biodata_user_place_holder.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/fragment_followers.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout-night/fragment_following.xml" value="0.27447916666666666" />
@@ -22,6 +28,7 @@
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/activity_not_found.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/activity_not_found_user.xml" value="0.27447916666666666" />
+        <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/activity_theme_setting.xml" value="0.264" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/biodata_user.xml" value="0.2734375" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/biodata_user_place_holder.xml" value="0.264" />
         <entry key="..\:/Project/Bangkit/AndroidFunda/Submissionpertama/app/src/main/res/layout/fragment_followers.xml" value="0.2" />

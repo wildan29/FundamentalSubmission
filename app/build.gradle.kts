@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-parcelize")
+    kotlin("kapt")
 }
 
 val properties = Properties().apply {
@@ -12,12 +13,12 @@ val properties = Properties().apply {
 
 android {
     namespace = "com.dicoding.githubapp"
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.dicoding.githubapp"
         minSdk = 21
-        targetSdk = 32
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -100,9 +101,17 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
     // lifecycleScope
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+
+    // room
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation("android.arch.persistence.room:runtime:1.1.1")
+    kapt("androidx.room:room-compiler:2.5.1")
+
 }
 
 tasks.register("copyAPKDebug", Copy::class) {

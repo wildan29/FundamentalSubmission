@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         itemDecoration.setDrawable(
             ContextCompat.getDrawable(
                 this,
-                R.color.action_bar
+                R.drawable.divider
             )!!
         )
         binding.rvUserGithub.addItemDecoration(itemDecoration)

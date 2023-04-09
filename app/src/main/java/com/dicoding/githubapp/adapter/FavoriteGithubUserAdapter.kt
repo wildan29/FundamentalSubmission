@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.githubapp.databinding.UserListGithubBinding
 import com.dicoding.githubapp.model.database.FavoriteGithubUser
-import com.dicoding.githubapp.model.remote.GithubUserModel
-
 
 class FavoriteGithubUserAdapter(private val listFavorteGithubUser: ArrayList<FavoriteGithubUser>) :
     RecyclerView.Adapter<FavoriteGithubUserAdapter.FavoriteGithubUserViewHolder>() {

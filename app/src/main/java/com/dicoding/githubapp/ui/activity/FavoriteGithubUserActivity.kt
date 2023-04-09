@@ -1,7 +1,6 @@
 package com.dicoding.githubapp.ui.activity
 
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -11,11 +10,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.githubapp.R
 import com.dicoding.githubapp.adapter.FavoriteGithubUserAdapter
-import com.dicoding.githubapp.adapter.UserListGithubAdapter
 import com.dicoding.githubapp.databinding.ActivityFavoriteGithubUserBinding
 import com.dicoding.githubapp.model.database.FavoriteGithubUser
-import com.dicoding.githubapp.model.remote.GithubUserModel
-import com.dicoding.githubapp.model.remote.ItemsItem
 import com.dicoding.githubapp.ui.factory.FavoriteGithubUserViewModelFactory
 import com.dicoding.githubapp.viewmodel.FavoriteGithubUserViewModel
 

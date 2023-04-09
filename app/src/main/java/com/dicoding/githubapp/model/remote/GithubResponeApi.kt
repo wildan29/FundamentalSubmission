@@ -2,11 +2,6 @@ package com.dicoding.githubapp.model.remote
 
 import com.google.gson.annotations.SerializedName
 
-data class GithubResponeApi(
-    @field:SerializedName("GithubResponeApi")
-    val responseapi: List<GithubResponeApiItem>
-)
-
 data class GithubResponeApiItem(
     @field:SerializedName("gists_url")
     val gistsUrl: String,

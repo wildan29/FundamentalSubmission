@@ -8,7 +8,7 @@ import retrofit2.http.*
 interface ApiService {
     @GET("users")
     @Headers("Authorization: token ${Utils.API_KEY_GITHUB}")
-    fun getAllUser(): Call<GithubResponeApi>
+    fun getAllUser(): Call<List<GithubResponeApiItem>>
 
     @GET("search/users")
     @Headers("Authorization: token ${Utils.API_KEY_GITHUB}")

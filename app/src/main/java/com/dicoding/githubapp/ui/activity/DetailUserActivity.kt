@@ -77,7 +77,6 @@ class DetailUserActivity : AppCompatActivity() {
                     }
                 }
             }
-
         }
 
         // add to database
@@ -199,5 +198,9 @@ class DetailUserActivity : AppCompatActivity() {
             detailUserViewModel.insert(it)
             Toast.makeText(this, "Add User To Favorite List", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun coba(){
+
     }
 }

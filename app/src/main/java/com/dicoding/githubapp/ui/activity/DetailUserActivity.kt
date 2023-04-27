@@ -77,6 +77,7 @@ class DetailUserActivity : AppCompatActivity() {
                     }
                 }
             }
+
         }
 
         // add to database

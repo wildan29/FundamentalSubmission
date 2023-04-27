@@ -199,8 +199,4 @@ class DetailUserActivity : AppCompatActivity() {
             Toast.makeText(this, "Add User To Favorite List", Toast.LENGTH_SHORT).show()
         }
     }
-
-    fun coba(){
-
-    }
 }
